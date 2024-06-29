@@ -48,25 +48,26 @@ function Navbar() {
 
 
     return (
-        <header className='w-full'>
+        <header className='w-full fixed bg-white'>
             <nav className='container flex items-center py-2  justify-between gap-3'>
-                {/* icon 1 */}
-                {/* <div>
 
-                    <FaUser className='text-blackColor w-5 h-5 cursor-pointer md:block' />
-                </div> */}
+                {/* search icon */}
+                <div>
+                    <FaSearch className='text-blackColor w-5 h-5 cursor-pointer' />
+                </div>
+
 
                 {/* logo */}
                 <div className=''>
 
-                    <a href="/"><img src={logo} alt="Logo" title="Logo" className='w-[125px] lg:w-32' /></a>
+                    <a href="/"><img src={logo} alt="Logo" title="Logo" className='w-[127px] lg:w-[150px]' /></a>
                 </div>
 
                 {/* accoun and shop*/}
                 <div className='text-lg text-bold text-blackColor flex items-center gap-4'>
 
-                    <a href="" className='flex items-center gap-2 capitalize text-center'><FaShoppingBag /></a>
-                    <a href="" className='flex items-center gap-2 capitalize text-center'><FaUser /></a>
+                    <a href="" className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 '><FaShoppingBag /></a>
+                    <a href="" className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 '><FaUser /></a>
                     <button onClick={hamburgerMenu} className='lg:hidden'>
                         {
                             isHamburgeMenuOpen ? <FaTimes className='text-blackColor w-5 h-5 cursor-pointer' /> :
@@ -87,7 +88,7 @@ function Navbar() {
                 <ul className='lg:flex items-center justify-between text-blackColor section-parag-light hidden'>
                     {
                         navItems().map(({ title, path }) => (
-                            <li key={title} className='hover:text-orange-500 duration-200 cursor-pointer'>
+                            <li key={title} className='hover:text-accentColor duration-200 cursor-pointer'>
                                 <Link to='/'>{title}</Link>
                             </li>
                         ))
@@ -100,7 +101,7 @@ function Navbar() {
                 <ul className={`bg-blackColor text-whiteColor px-4 py-2 rounded ${isHamburgeMenuOpen ? "translate-x-0 duration-300" : "hidden"}`}>
                     {
                         navItems().map(({ title, path }) => (
-                            <li key={title} className='hover:text-orange-500 duration-200 cursor-pointer py-2 section-parag-dark'>
+                            <li key={title} className='hover:text-accentColor duration-200 cursor-pointer py-2 section-parag-dark'>
                                 <Link to='/'>{title}</Link>
                             </li>
                         ))

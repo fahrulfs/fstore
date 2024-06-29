@@ -1,10 +1,16 @@
 import React from 'react'
-
+import Banner from './Banner'
+import Navbar from '../../components/Navbar'
+import { Outlet } from 'react-router-dom'
+import Buton from '../../components/Buton'
 function Home() {
     return (
-        <div>
-            <h1 className='text-black'>hello</h1>
-        </div>
+        <>
+            <div>
+                <Banner />
+            </div>
+
+        </>
     )
 }
 

@@ -23,10 +23,10 @@
     font-family: "Roboto", sans-serif;
   }
   .section-tittle-dark {
-    @apply tracking-wider text-4xl lg:text-6xl font-semibold uppercase text-whiteColor;
+    @apply tracking-wider text-4xl lg:text-6xl font-light capitalize text-whiteColor;
   }
   .section-tittle-light {
-    @apply tracking-wider text-4xl lg:text-6xl font-semibold uppercase text-blackColor;
+    @apply tracking-wider text-4xl lg:text-6xl font-light capitalize text-blackColor;
   }
   .section-parag-dark {
     @apply text-sm lg:text-sm font-normal  text-whiteColor;
