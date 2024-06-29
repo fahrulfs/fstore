@@ -1,12 +1,12 @@
 import React from 'react'
-import { FaBars, FaBell, FaEnvelope, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa";
+import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg'
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
-
-
+// nav link
 const navItems = () => [
     {
         title: "Jewelry & Accessories",
@@ -42,13 +42,32 @@ function Navbar() {
 
     // navmobile
     const [isHamburgeMenuOpen, setIsHamburgerMenuOpen] = useState(false)
-    const hamburgerMenu = () => {
+    function hamburgerMenu() {
         setIsHamburgerMenuOpen(!isHamburgeMenuOpen)
     }
 
 
+    // navbar change color when scroll 
+    const [isScrolled, setIsScrolled] = useState(false)
+
+
+    // checking condition
+    useEffect(() => {
+        function handleScroll() {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+    });
+
     return (
-        <header className='w-full fixed bg-white'>
+        <header className={`z-50 fixed items-center w-full p-2 
+        ${isScrolled ? 'backdrop-blur-md bg-white/50 shadow-md h-14 lg:h-fit'
+                : ''}`}>
             <nav className='container flex items-center py-2  justify-between gap-3'>
 
                 {/* search icon */}
@@ -82,7 +101,7 @@ function Navbar() {
 
 
             {/* category */}
-            <hr />
+            <hr className='hidden lg:block' />
 
             <div className='container mt-3'>
                 <ul className='lg:flex items-center justify-between text-blackColor section-parag-light hidden'>
