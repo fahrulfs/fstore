@@ -45,3 +45,6 @@
     @apply text-xs md:text-sm lg:text-base;
   }
 }
+.text-active {
+  @apply text-whiteColor py-1 px-3 rounded-md bg-blackColor flex items-center justify-center section-parag-dark;
+}

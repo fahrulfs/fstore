@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Cards from '../../components/Cards'
+import Button from '../../components/Button'
 
 
 function Products() {
@@ -7,7 +8,6 @@ function Products() {
     const [products, setProducts] = useState([])
     const [filteredItems, setFilteredItems] = useState([])
     const [selectedCategory, setSelectedCategoty] = useState('all')
-    const [sortOption, setSortOption] = useState('default')
 
 
     useEffect(() => {
@@ -35,32 +35,42 @@ function Products() {
         setSelectedCategoty('all')
     }
 
+
     return (
         <div className=' w-full h-fit py-8 mt-10'>
             <div className='container text-center w-full'>
-                <h3 className='h3 capitalize text-blackColor'>Or subscribe to the newsletter</h3>
+                <h2 className='h2 capitalize text-blackColor'>Or subscribe our newsletter</h2>
             </div>
 
             {/* Product category tab */}
             <div className='w-full h-fit mt-5 container'>
-                <div className="w-full flex justify-between">
+                <div className="w-full flex gap-2 lg:justify-start justify-center">
 
-                    <div className='flex gap-2'>
+                    <button
+                        className={`section-parag-light ${selectedCategory === 'all' ? 'text-active' : ''}`}
+                        onClick={showAll}
+                    >
+                        All
+                    </button>
+                    <button
+                        className={`section-parag-light ${selectedCategory === 'Dress' ? 'text-active' : ''}`}
+                        onClick={() => filterItems('Dress')}
+                    >
+                        Clothing
+                    </button>
+                    <button
+                        className={`section-parag-light ${selectedCategory === 'Hoodies' ? 'text-active' : ''}`}
+                        onClick={() => filterItems('Hoodies')}
+                    >
+                        Hoodies
+                    </button>
+                    <button
+                        className={`section-parag-light ${selectedCategory === 'Bag' ? 'text-active' : ''}`}
+                        onClick={() => filterItems('Bag')}
+                    >
+                        Bag
+                    </button>
 
-                        <button className='section-parag-light' onClick={showAll}>All</button>
-                        <button className='section-parag-light' onClick={() => filterItems('Dress')}>Clothing</button>
-                        <button className='section-parag-light' onClick={() => filterItems('Hoodies')}>Hoodies</button>
-                        <button className='section-parag-light' onClick={() => filterItems('Bag')}>Bag</button>
-                    </div>
-
-                    {/* sorting product */}
-                    <select className='bg-blackColor text-whiteColor p-1 rounded-md outline-none border-none capitalize section-parag-dark'>
-                        <option value="default">Default</option>
-                        <option value="a-z">A-Z</option>
-                        <option value="z-a">Z-A</option>
-                        <option value="low-high">Low to High</option>
-                        <option value="high-low">High to Low</option>
-                    </select>
                 </div>
             </div>
             {/* Product Card */}

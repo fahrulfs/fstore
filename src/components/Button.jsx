@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Buton(props) {
+function Button(props) {
     const { style, children } = props
     return (
         <button className={`${style}`}>
@@ -9,4 +9,4 @@ function Buton(props) {
     )
 }
 
-export default Buton
+export default Button
