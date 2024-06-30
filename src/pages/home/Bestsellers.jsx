@@ -31,18 +31,20 @@ function Bestsellers() {
 
                 <Swiper
                     breakpoints={{
-                        480: {
-                            slidesPerView: 1,
+                        320: {
+                            slidesPerView: 2,
+                            spaceBetween: 10
                         },
                         768: {
                             slidesPerView: 2,
+                            spaceBetween: 20
                         },
                         1024: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
+                            spaceBetween: 30
                         },
                     }}
                     loop={true}
-                    spaceBetween={10}
                     autoplay={{
                         delay: 1800,
                         disableOnInteraction: false,
@@ -67,7 +69,7 @@ function Bestsellers() {
                                         <p className='section-parag-light'>
                                             {product.category}
                                         </p>
-                                        <h4 className='h4 text-accentColor font-normal capitalize'>Rp.{product.price}k</h4>
+                                        <h4 className='h4 text-accentColor font-normal capitalize'>${product.price}</h4>
                                     </div>
                                 </div>
                             </Link>

@@ -18,7 +18,7 @@ const Cards = ({ products }) => {
                                     <p className='section-parag-light'>
                                         {item.category}
                                     </p>
-                                    <h4 className='h4 text-accentColor font-normal capitalize'>Rp.{item.price}k</h4>
+                                    <h4 className='h4 text-accentColor font-normal capitalize'>${item.price}</h4>
                                 </div>
                             </Link>
                         </div>
