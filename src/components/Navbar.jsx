@@ -95,7 +95,7 @@ function Navbar() {
                 {/* logo */}
                 <div className=''>
 
-                    <a href="/"><img src={logo} alt="Logo" title="Logo" className='w-[127px] lg:w-[150px]' /></a>
+                    <a href="/">LOGO</a>
                 </div>
 
                 {/* accoun and shop*/}
