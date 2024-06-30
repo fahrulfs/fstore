@@ -25,7 +25,7 @@ const Cards = ({ products }) => {
                     )
                 })
             ) : (
-                <p>No items available</p>
+                <p>No items available!</p>
             )}
         </div>
     )
