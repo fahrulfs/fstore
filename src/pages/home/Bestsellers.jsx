@@ -46,7 +46,7 @@ function Bestsellers() {
                     }}
                     loop={true}
                     autoplay={{
-                        delay: 1800,
+                        delay: 1750,
                         disableOnInteraction: false,
                     }}
                     pagination={{
