@@ -1,4 +1,3 @@
-import React from 'react'
 import collectioLogo from '/images/collection/zara-logo.png'
 import Button from '../../components/Button';
 function Collection() {

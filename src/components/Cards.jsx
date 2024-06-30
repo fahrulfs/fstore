@@ -1,6 +1,4 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-
 const Cards = ({ products }) => {
     return (
 
@@ -10,7 +8,7 @@ const Cards = ({ products }) => {
                 products.map((item) => {
                     return (
                         <div key={item.id
-                        } className='rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer'>
+                        } className='rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer bg-whiteColor'>
                             <Link rel="stylesheet" to={`/shop/${item.id}`}>
                                 <img src={item.image} alt="" />
                                 <h4 className='mt-2 h4 text-black font-semibold capitalize'>{item.title}</h4>

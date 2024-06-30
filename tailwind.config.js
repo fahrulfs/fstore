@@ -13,9 +13,8 @@ export default {
         blackColor: '#1E2832',
         whiteColor: '#fff',
         accentColor: '#ea580c',
-        bgPrimary: '#E5E5E5',
         bgDarkmode: "#020617",
-        bgLightmode: "#fafaf9"
+        bgLightmode: "#f3f4f6"
 
       },
       // fontFamily: {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg'

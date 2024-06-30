@@ -1,4 +1,3 @@
-import React from 'react'
 import bannerImg from '/images/banner/banner.svg'
 import Button from '../../components/Button'
 import { FaShoppingBag } from 'react-icons/fa'

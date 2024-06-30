@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
@@ -19,15 +19,7 @@ function Bestsellers() {
                 <p className='section-parag-light mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere nobis, corporis doloremque voluptatem sequi perspiciatis</p>
             </div>
             {/* best seller */}
-            <div className='container text-center w-full lg:px-32'>
-                <div className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
-
-                </div>
-
-
-            </div>
-
-            <div className='container w-full lg:h-dvh'>
+            <div className='container w-full lg:h-[500px] lg:mt-0 mt-5'>
 
                 <Swiper
                     breakpoints={{

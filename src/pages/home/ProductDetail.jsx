@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowAltCircleRight, FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import Button from "../../components/Button";
@@ -24,7 +24,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("products.json");
+                const response = await fetch("/products.json");
                 const data = await response.json();
                 const product = data.filter((p) => p.id == id)
                 //  console.log(product[0])
@@ -97,7 +97,7 @@ const ProductDetail = () => {
                             style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
                             title="Confirm Order"
                         >
-                            <span>Confirm Order</span>
+                            <span>Add To Cart</span>
                             <FaArrowAltCircleRight />
                         </Button>
                     </div>

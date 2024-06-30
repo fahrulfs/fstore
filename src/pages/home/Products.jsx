@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Cards from '../../components/Cards'
-import Button from '../../components/Button'
 
 
 function Products() {
@@ -37,14 +36,14 @@ function Products() {
 
 
     return (
-        <div className=' w-full h-fit py-8 mt-10'>
+        <div className=' w-full h-fit py-12 mt-10'>
             <div className='container text-center w-full'>
-                <h2 className='h2 capitalize text-blackColor'>Or subscribe our newsletter</h2>
+                <h2 className='h2 capitalize text-blackColor'>Explore Product</h2>
             </div>
 
             {/* Product category tab */}
             <div className='w-full h-fit mt-5 container'>
-                <div className="w-full flex gap-2 lg:justify-start justify-center">
+                <div className="w-full flex gap-2 justify-center">
 
                     <button
                         className={`section-parag-light ${selectedCategory === 'all' ? 'text-active' : ''}`}
