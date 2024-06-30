@@ -7,8 +7,8 @@ function Banner() {
     return (
 
         <div className='w-full bg-bgLightmode'>
-            <div className='container lg:px-20 flex flex-col-reverse md:flex-row md:justify-between md:items-center
-            h-dvh md:h-auto pt-[100px]'>
+            <div className='
+           lg:h-dvh container pb-12 lg:px-20 flex flex-col-reverse md:flex-row md:justify-between md:items-center md:h-auto pt-[110px]'>
                 <div className='w-full md:w-1/2 block'>
                     <h1 className='section-tittle-light'>Collections</h1>
                     <p className='section-parag-light mt-3 capitalize'>you can explore ans shop many differnt collection
@@ -20,7 +20,7 @@ function Banner() {
                     </a>
                 </div>
                 <div classsName='w-1/2'>
-                    <img src={bannerImg} alt="banner" title="banner" className='w-full h-full' />
+                    <img src={bannerImg} alt="banner" title="banner" className='w-full h-[470px]' />
                 </div>
             </div>
         </div>

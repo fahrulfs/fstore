@@ -34,7 +34,10 @@ function Category() {
                     </div>
                 </div>
             </div>
+
+
             <div className='w-full container mt-20 grid lg:grid-cols-4 gap-2'>
+
                 <div className='relative transition-all duration-300 row-span-2 col-span-2 cursor-pointer'>
                     <img src="/images/product-grid/product-grid-1.svg" alt="" className='w-full h-full' />
                     <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>

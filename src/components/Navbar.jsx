@@ -40,7 +40,14 @@ const navItems = () => [
 
 function Navbar() {
 
-    // navmobile
+    // searchbar 
+    const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
+    function toggleSearchBar() {
+        setIsSearchBarVisible(!isSearchBarVisible);
+    }
+
+
+    // nav in mobile
     const [isHamburgeMenuOpen, setIsHamburgerMenuOpen] = useState(false)
     function hamburgerMenu() {
         setIsHamburgerMenuOpen(!isHamburgeMenuOpen)
@@ -48,8 +55,8 @@ function Navbar() {
 
 
     // navbar change color when scroll 
-    const [isScrolled, setIsScrolled] = useState(false)
-
+    const [isScrolled, setIsScrolled] =
+        useState(false)
 
     // checking condition
     useEffect(() => {
@@ -71,9 +78,18 @@ function Navbar() {
             <nav className='container flex items-center py-2  justify-between gap-3'>
 
                 {/* search icon */}
+
                 <div>
-                    <FaSearch className='text-blackColor w-5 h-5 cursor-pointer' />
+                    <FaSearch onClick={toggleSearchBar} className='text-blackColor w-5 h-5 cursor-pointer' />
                 </div>
+                {/* searchbar visible */}
+                {isSearchBarVisible && (
+                    <div className='container absolute top-10 lg:top-20 left-0 right-0 w-full bg-white p-2 shadow-md'>
+                        <input type="text" className='w-full p-2 border border-gray-300 rounded outline-accentColor' placeholder="Search..." />
+                    </div>
+                )}
+
+
 
 
                 {/* logo */}
@@ -127,6 +143,7 @@ function Navbar() {
                     }
                 </ul>
             </div>
+
         </header>
     )
 }
