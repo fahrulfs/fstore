@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaArrowAltCircleRight, FaArrowLeft, FaStar } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { FaArrowAltCircleRight, FaStar } from "react-icons/fa";
+import { useParams, Link } from "react-router-dom";
 import Button from "../../components/Button";
 
 const DummyText = {
@@ -96,13 +96,15 @@ const ProductDetail = () => {
                     </div>
                     {/* Order Button */}
                     <div className="w-full text-left">
-                        <Button
-                            style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
-                            title="Confirm Order"
-                        >
-                            <span>Add To Cart</span>
-                            <FaArrowAltCircleRight />
-                        </Button>
+                        <Link>
+                            <Button
+                                style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
+                                title="Confirm Order"
+                            >
+                                <span>Add To Cart</span>
+                                <FaArrowAltCircleRight />
+                            </Button>
+                        </Link>
                     </div>
 
                 </div>

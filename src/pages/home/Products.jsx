@@ -36,7 +36,7 @@ function Products() {
 
 
     return (
-        <div className=' w-full h-fit py-12 mt-10'>
+        <div id='products' className=' w-full h-fit py-12 mt-10'>
             <div className='container text-center w-full'>
                 <h2 className='h2 capitalize text-blackColor'>Explore Product</h2>
             </div>

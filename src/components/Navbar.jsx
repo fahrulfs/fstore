@@ -1,8 +1,7 @@
 import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 // nav link
@@ -70,6 +69,13 @@ function Navbar() {
 
     });
 
+    // cart display
+    const [isCartVisible, setIsCartVisible] = useState(false);
+    function openCart() {
+        setIsCartVisible(!isCartVisible);
+    }
+
+
     return (
         <header className={`z-50 fixed items-center w-full p-2 
         ${isScrolled ? 'backdrop-blur-md bg-white/50 shadow-md h-14 lg:h-fit'
@@ -94,13 +100,17 @@ function Navbar() {
                 {/* logo */}
                 <div className=''>
 
-                    <a href="/">LOGO</a>
+                    <a href="/"><img src={logo} alt="" /></a>
                 </div>
 
                 {/* accoun and shop*/}
                 <div className='text-lg text-bold text-blackColor flex items-center gap-4'>
+                    <a onClick={openCart} className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 cursor-pointer'>
+                        {
+                            isCartVisible ? <FaTimes className='hover:text-blackColor text-accentColor w-5 h-5 cursor-pointer' /> :
+                                <FaShoppingBag className='text-blackColor hover:text-accentColor w-5 h-5 cursor-pointer' />
+                        }</a>
 
-                    <a href="" className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 '><FaShoppingBag /></a>
                     <a href="" className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 '><FaUser /></a>
                     <button onClick={hamburgerMenu} className='lg:hidden'>
                         {
@@ -143,7 +153,30 @@ function Navbar() {
                 </ul>
             </div>
 
+            {isCartVisible && (
+                <div className='container left-[50%] -translate-x-1/2 absolute top-[60px] px-6 lg:-right-[500px] md:-right-[300px] lg:w-88 md:w-80 bg-white p-4 shadow-md rounded-md h-fit'>
+                    <h2 className='text-lg font-bold mb-4'>Shopping Cart</h2>
+                    <ul>
+                        {/* Contoh item di cart */}
+                        <li className='flex justify-between items-center mb-2'>
+                            <span>Item 1</span>
+                            <span>$10.00</span>
+                        </li>
+                        <li className='flex justify-between items-center mb-2'>
+                            <span>Item 2</span>
+                            <span>$20.00</span>
+                        </li>
+                    </ul>
+                    <div className='flex justify-between items-center mt-4'>
+                        <span className='font-bold'>Total:</span>
+                        <span className='font-bold'>$30.00</span>
+                    </div>
+                    <button className='mt-4 w-full bg-accentColor text-white p-2 rounded'>Checkout</button>
+                </div>
+            )}
+
         </header>
+
     )
 }
 

@@ -65,7 +65,7 @@ function Bestsellers() {
                                         </p>
                                         <h4 className='h4 text-accentColor font-normal capitalize'>${product.price}</h4>
                                     </div>
-                                    <div className='absolute inset-0 flex gap-2 items-end pb-16 pe-3 justify-end bg-blackColor bg-opacity-10 opacity-0 lg:hover:opacity-90 transition-opacity duration-300 rounded-md'>
+                                    <div className='hidden absolute inset-0 lg:flex gap-2 items-end pb-16 pe-3 justify-end bg-blackColor bg-opacity-10 opacity-0 lg:hover:opacity-90 transition-opacity duration-300 rounded-md'>
                                         <Link to={`/shop/${product.id}`}>
                                             <Button style='bg-accentColor text-white p-2 rounded-md'><FaEye /></Button>
                                         </Link>

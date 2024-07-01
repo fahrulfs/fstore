@@ -13,8 +13,7 @@ const Footer = () => {
                     {/* company info */}
                     <div className="md:w-[400px]">
                         <Link to="/">
-                            {/* <img src="/logo.svg" alt="" /> */}
-                            <h1>LOGO</h1>
+                            <img src="/logo.svg" alt="" />
                         </Link>
                         <p className="section-parag-light my-4">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
