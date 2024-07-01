@@ -2,7 +2,7 @@ import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg'
 import { useState, useEffect } from 'react';
-
+import Cart from "./Cart";
 
 // nav link
 const navItems = () => [
@@ -153,27 +153,10 @@ function Navbar() {
                 </ul>
             </div>
 
-            {isCartVisible && (
-                <div className='container left-[50%] -translate-x-1/2 absolute top-[60px] px-6 lg:-right-[500px] md:-right-[300px] lg:w-88 md:w-80 bg-white p-4 shadow-md rounded-md h-fit'>
-                    <h2 className='text-lg font-bold mb-4'>Shopping Cart</h2>
-                    <ul>
-                        {/* Contoh item di cart */}
-                        <li className='flex justify-between items-center mb-2'>
-                            <span>Item 1</span>
-                            <span>$10.00</span>
-                        </li>
-                        <li className='flex justify-between items-center mb-2'>
-                            <span>Item 2</span>
-                            <span>$20.00</span>
-                        </li>
-                    </ul>
-                    <div className='flex justify-between items-center mt-4'>
-                        <span className='font-bold'>Total:</span>
-                        <span className='font-bold'>$30.00</span>
-                    </div>
 
-                    <button className='mt-4 w-full bg-accentColor text-white p-2 rounded'>Checkout</button>
-                </div>
+            {/* CART */}
+            {isCartVisible && (
+                <Cart />
             )}
 
         </header>

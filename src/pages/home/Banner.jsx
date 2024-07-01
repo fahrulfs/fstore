@@ -8,8 +8,9 @@ function Banner() {
         <div className='w-full bg-bgLightmode'>
             <div className='
            lg:h-dvh container pb-12 lg:px-20 flex flex-col-reverse md:flex-row md:justify-between md:items-center md:h-auto pt-[110px]'>
-                <div className='w-full md:w-1/2 block'>
-                    <h1 className='section-tittle-light'>Collections</h1>
+                <div className='w-full md:w-1/2 lg:w-[70%] block'>
+                    <h1 className='section-tittle-light mt-4'>Discover Latest Fashion Trends
+                    </h1>
                     <p className='section-parag-light mt-3 capitalize'>you can explore ans shop many differnt collection
                         from various barands here</p>
                     <a href="#products">
@@ -18,7 +19,7 @@ function Banner() {
                         </Button>
                     </a>
                 </div>
-                <div classsName='w-1/2'>
+                <div classsName='w-1/2 lg:w-2/5'>
                     <img src={bannerImg} alt="banner" title="banner" className='w-full h-[470px]' />
                 </div>
             </div>

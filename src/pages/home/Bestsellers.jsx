@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Button from '../../components/Button';
-import { FaEye, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,7 +9,8 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 function Bestsellers() {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('products.json').then(res => res.json()).then(data => setProducts(data))
+        fetch('products.json').then(response =>
+            response.json()).then(data => setProducts(data))
     }, [])
     const bestSeller = products.filter((item) => item.status === "Best Selers")
     return (
@@ -55,25 +54,17 @@ function Bestsellers() {
 
                         <SwiperSlide key={product.id}>
                             <Link rel="stylesheet" to={`/shop/${product.id}`}>
-                                <div className='relative rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer lg:w-[250px]'>
+                                <div className='rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer lg:w-[250px]'>
 
                                     <img src={product.image} alt="" className='w-full' />
-                                    <h4 className='mt-2 h4 text-black font-semibold capitalize'>{product.title}</h4>
+                                    <h4 className='mt-2 h4 text-black font-semibold capitalize text-left'>{product.title}</h4>
                                     <div className='flex justify-between'>
                                         <p className='section-parag-light'>
                                             {product.category}
                                         </p>
                                         <h4 className='h4 text-accentColor font-normal capitalize'>${product.price}</h4>
                                     </div>
-                                    <div className='hidden absolute inset-0 lg:flex gap-2 items-end pb-16 pe-3 justify-end bg-blackColor bg-opacity-10 opacity-0 lg:hover:opacity-90 transition-opacity duration-300 rounded-md'>
-                                        <Link to={`/shop/${product.id}`}>
-                                            <Button style='bg-accentColor text-white p-2 rounded-md'><FaEye /></Button>
-                                        </Link>
-                                        <Link to={`/hai/${product.id}`}>
-                                            <Button style='bg-accentColor text-white p-2  rounded-md flex gap-2 items-center justify-center'><FaShoppingCart />
-                                                <span className='text-xs'>Add To Cart</span></Button>
-                                        </Link>
-                                    </div>
+
                                 </div>
 
                             </Link>

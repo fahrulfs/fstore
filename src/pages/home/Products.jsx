@@ -11,17 +11,15 @@ function Products() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch('products.json')
-                const data = await response.json()
-                setProducts(data)
-                setFilteredItems(data)
-            } catch (error) {
-                console.error('Error fetching the products:', error)
-            }
+            const response = await fetch('products.json')
+            const data = await response.json()
+            setProducts(data)
+            setFilteredItems(data)
         }
         fetchData()
     }, [])
+
+
     // filtering
     const filterItems = (category) => {
         const filtered = category === "all" ? (products) : products.filter((item) => item.category === category)

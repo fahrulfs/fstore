@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaArrowAltCircleRight, FaStar } from "react-icons/fa";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Button from "../../components/Button";
 
 const DummyText = {
@@ -19,27 +19,17 @@ const ProductDetail = () => {
 
     const { id } = useParams()
     const [products, setProducts] = useState([]);
-    useEffect(() => {
-        // Scroll to the top when the component mounts
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, []);
+    const { image, title, category, price } = products;
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch("/products.json");
-                const data = await response.json();
-                const product = data.filter((p) => p.id == id)
-                //  console.log(product[0])
-                setProducts(product[0])
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-        fetchData();
+            const response = await fetch("/products.json");
+            const data = await response.json();
+            const product = data.filter((p) => p.id == id)
+            setProducts(product[0])
+        }
+        fetchData()
     }, [id])
 
-    const { image, title, category, price } = products;
 
 
     return (
@@ -84,29 +74,16 @@ const ProductDetail = () => {
                             ${price}
                         </span>
                     </div>
-                    {/* quantiti */}
-                    <div className="text-left flex flex-col gap-2 w-full">
-                        {/* Quantity Label */}
-                        <label className="font-semibold">Quantity</label>
-                        {/* Quantity Input */}
-                        <input
-                            className="border border-gray-300 text-sm font-semibold mb-1 max-w-full w-full outline-none rounded-md m-0 py-3 px-4 md:py-3 md:px-4 md:mb-0 focus:border-red-500"
-                            type="number"
-                            defaultValue="1"
-                            required
-                        />
-                    </div>
+
                     {/* Order Button */}
                     <div className="w-full text-left">
-                        <Link>
-                            <Button
-                                style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
-                                title="Confirm Order"
-                            >
-                                <span>Add To Cart</span>
-                                <FaArrowAltCircleRight />
-                            </Button>
-                        </Link>
+                        <Button
+                            style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
+                            title="Confirm Order"
+                        >
+                            <span>Add To Cart</span>
+                            <FaArrowAltCircleRight />
+                        </Button>
                     </div>
 
                 </div>
@@ -139,13 +116,11 @@ const ProductDetail = () => {
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-
         </div>
     );
 };
+
+
 
 export default ProductDetail;
