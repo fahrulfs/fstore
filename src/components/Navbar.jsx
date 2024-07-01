@@ -171,6 +171,7 @@ function Navbar() {
                         <span className='font-bold'>Total:</span>
                         <span className='font-bold'>$30.00</span>
                     </div>
+
                     <button className='mt-4 w-full bg-accentColor text-white p-2 rounded'>Checkout</button>
                 </div>
             )}

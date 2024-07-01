@@ -15,6 +15,8 @@ const DummyText = {
 };
 
 const ProductDetail = () => {
+
+
     const { id } = useParams()
     const [products, setProducts] = useState([]);
     useEffect(() => {
