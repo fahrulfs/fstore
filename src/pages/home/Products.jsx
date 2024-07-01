@@ -55,13 +55,13 @@ function Products() {
                         className={`section-parag-light ${selectedCategory === 'Dress' ? 'text-active' : ''}`}
                         onClick={() => filterItems('Dress')}
                     >
-                        Clothing
+                        Women
                     </button>
                     <button
                         className={`section-parag-light ${selectedCategory === 'Hoodies' ? 'text-active' : ''}`}
                         onClick={() => filterItems('Hoodies')}
                     >
-                        Hoodies
+                        Man
                     </button>
                     <button
                         className={`section-parag-light ${selectedCategory === 'Bag' ? 'text-active' : ''}`}
@@ -69,6 +69,13 @@ function Products() {
                     >
                         Bag
                     </button>
+                    <button
+                        className={`section-parag-light ${selectedCategory === 'Shoe' ? 'text-active' : ''}`}
+                        onClick={() => filterItems('Shoe')}
+                    >
+                        Shoe
+                    </button>
+
 
                 </div>
             </div>

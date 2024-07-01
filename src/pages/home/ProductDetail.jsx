@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaArrowAltCircleRight, FaStar } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaArrowLeft, FaStar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import Button from "../../components/Button";
 
@@ -44,13 +44,16 @@ const ProductDetail = () => {
         <div className="container w-full h-fit">
 
             <div className="pt-20 lg:pt-32 grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12 gap-6">
+
                 {/* Product Image */}
                 <div className="overflow-hidden rounded-xl">
+
                     <img
                         src={image}
                         alt="Product-Image"
                         className="w-full"
                     />
+
 
                 </div>
                 {/* Product Details */}
@@ -116,7 +119,7 @@ const ProductDetail = () => {
                     </div>
                     <div className="mt-5">
                         <h3 className="h3">Highlights</h3>
-                        <div className="mt-4 space-y-4">
+                        <div className="mt-4 space-y-2">
                             <li className="text-sm text-gray-6000">
                                 {DummyText.highlights[0]}
                             </li>

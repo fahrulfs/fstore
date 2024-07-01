@@ -30,7 +30,7 @@ const NewsletterImg = [
 
 function Newsletter() {
     return (
-        <div className="w-full bg-bgLightmode">
+        <div className="w-full bg-whiteColor">
             <div className='container text-center h-fit w-full mt-5 py-12'>
                 <h2 className='h2 capitalize text-blackColor'>Follow products and discounts on Instagram</h2>
 

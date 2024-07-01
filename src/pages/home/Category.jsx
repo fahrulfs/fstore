@@ -38,24 +38,24 @@ function Category() {
             <div className='w-full container mt-20 grid lg:grid-cols-4 gap-2'>
 
                 <div className='relative transition-all duration-300 row-span-2 col-span-2 cursor-pointer'>
-                    <img src="/images/product-grid/product-grid-1.svg" alt="" className='w-full h-full' />
-                    <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>
+                    <img src="/images/product-grid/product-grid-1.png" alt="" className='w-full h-full' />
+                    <div className='absolute inset-0 bg-gray-200 opacity-0 lg:hover:opacity-50 transition-opacity duration-300'><h2 className="h2 text-black uppercase flex justify-center items-center pt-20 font-semibold">Women Cloth</h2></div>
                 </div>
                 <div className='relative transition-all duration-300 cursor-pointer'>
-                    <img src="/images/product-grid/product-grid-2.svg" alt="" className='w-full h-full' />
-                    <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>
+                    <img src="/images/product-grid/product-grid-2.png" alt="" className='w-full h-full' />
+                    <div className='absolute inset-0 bg-gray-200 opacity-0 lg:hover:opacity-50 transition-opacity duration-300'><h2 className="h2 text-black uppercase flex justify-center items-center pt-20 font-semibold">men Cloth</h2></div>
                 </div>
                 <div className='relative transition-all duration-300 cursor-pointer'>
-                    <img src="/images/product-grid/product-grid-3.svg" alt="" className='w-full h-full' />
-                    <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>
+                    <img src="/images/product-grid/product-grid-3.png" alt="" className='w-full h-full' />
+                    <div className='absolute inset-0 bg-gray-200 opacity-0 lg:hover:opacity-50 transition-opacity duration-300'><h2 className="h2 text-black uppercase flex justify-center items-center pt-20 font-semibold">Women Cloth</h2></div>
                 </div>
                 <div className='relative transition-all duration-300 cursor-pointer'>
-                    <img src="/images/product-grid/product-grid-4.svg" alt="" className='w-full h-full' />
-                    <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>
+                    <img src="/images/product-grid/product-grid-4.png" alt="" className='w-full h-full' />
+                    <div className='absolute inset-0 bg-gray-200 opacity-0 lg:hover:opacity-50 transition-opacity duration-300'><h2 className="h2 text-black uppercase flex justify-center items-center pt-20 font-semibold">men Cloth</h2></div>
                 </div>
                 <div className='relative transition-all duration-300 cursor-pointer'>
-                    <img src="/images/product-grid/product-grid-5.svg" alt="" className='w-full h-full' />
-                    <div className='absolute inset-0 bg-blackColor opacity-0 hover:opacity-50 transition-opacity duration-300'></div>
+                    <img src="/images/product-grid/product-grid-5.png" alt="" className='w-full h-full' />
+                    <div className='absolute inset-0 bg-gray-200 opacity-0 lg:hover:opacity-50 transition-opacity duration-300'><h2 className="h2 text-black uppercase flex justify-center items-center pt-20 font-semibold">Women Cloth</h2></div>
                 </div>
 
             </div>

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Button from '../../components/Button';
+import { FaEye, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -28,12 +30,12 @@ function Bestsellers() {
                             spaceBetween: 10
                         },
                         768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 20
                         },
                         1024: {
                             slidesPerView: 4,
-                            spaceBetween: 30
+                            spaceBetween: 20
                         },
                     }}
                     loop={true}
@@ -53,9 +55,9 @@ function Bestsellers() {
 
                         <SwiperSlide key={product.id}>
                             <Link rel="stylesheet" to={`/shop/${product.id}`}>
-                                <div className='rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer'>
+                                <div className='relative rounded-md border border-gray-200 p-2 hover:scale-105 duration-150 cursor-pointer lg:w-[250px]'>
 
-                                    <img src={product.image} alt="" />
+                                    <img src={product.image} alt="" className='w-full' />
                                     <h4 className='mt-2 h4 text-black font-semibold capitalize'>{product.title}</h4>
                                     <div className='flex justify-between'>
                                         <p className='section-parag-light'>
@@ -63,7 +65,17 @@ function Bestsellers() {
                                         </p>
                                         <h4 className='h4 text-accentColor font-normal capitalize'>${product.price}</h4>
                                     </div>
+                                    <div className='absolute inset-0 flex gap-2 items-end pb-16 pe-3 justify-end bg-blackColor bg-opacity-10 opacity-0 lg:hover:opacity-90 transition-opacity duration-300 rounded-md'>
+                                        <Link to={`/shop/${product.id}`}>
+                                            <Button style='bg-accentColor text-white p-2 rounded-md'><FaEye /></Button>
+                                        </Link>
+                                        <Link to={`/hai/${product.id}`}>
+                                            <Button style='bg-accentColor text-white p-2  rounded-md flex gap-2 items-center justify-center'><FaShoppingCart />
+                                                <span className='text-xs'>Add To Cart</span></Button>
+                                        </Link>
+                                    </div>
                                 </div>
+
                             </Link>
                         </SwiperSlide>
                     )

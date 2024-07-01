@@ -1,4 +1,4 @@
-import bannerImg from '/images/banner/banner.svg'
+import bannerImg from '/images/banner/banner.png'
 import Button from '../../components/Button'
 import { FaShoppingBag } from 'react-icons/fa'
 

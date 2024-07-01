@@ -4,7 +4,7 @@ import Products from './Products'
 import Collection from './Collection'
 import Bestsellers from './Bestsellers'
 import Newsletter from './Newsletter'
-
+import Footer from '../../components/Footer'
 function Home() {
     return (
         <>
@@ -15,6 +15,7 @@ function Home() {
                 <Collection />
                 <Bestsellers />
                 <Newsletter />
+                <Footer />
             </div>
 
         </>

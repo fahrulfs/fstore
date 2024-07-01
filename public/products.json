@@ -61,6 +61,38 @@
        "category": "Glasses",
        "price": 160,
        "image":"/images/products/image8.png"
+    },
+     {
+        "id":9,
+       "title":"Adicolor Classics Joggers",
+       "category": "Dress",
+       "price": 370,
+        "image":"/images/products/image9.png",
+        "status": "Best Selers"
+    },
+    {
+        "id":10,
+       "title":"Nike Sportswear Futura Luxe",
+       "category": "Dress",
+       "price": 300,
+       "image":"/images/products/image10.png",
+       "status": "Best Selers"
+    },
+    {
+        "id":11,
+       "title":"Geometric print Scarf",
+       "category": "Hoodies",
+       "price": 200,
+       "image":"/images/products/image11.png",
+       "status": "Best Selers"
+    },
+    {
+        "id":12,
+       "title":"Yellow Reserved Hoodie",
+       "category": "Dress",
+       "price": 320,
+       "image":"/images/products/image12.png",
+       "status": "New Arriaval"
     }
    
 ]
