@@ -14,12 +14,12 @@ const DummyText = {
         'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
 
-const ProductDetail = () => {
+const ProductDetail = ({ addToCart }) => {
 
 
     const { id } = useParams()
-    const [products, setProducts] = useState([]);
-    const { image, title, category, price } = products;
+    const [products, setProducts] = useState([])
+    // const { image, title, category, price } = products;
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("/products.json");
@@ -30,7 +30,10 @@ const ProductDetail = () => {
         fetchData()
     }, [id])
 
-
+    if (!products) {
+        return <div>Loading...</div>; // Tambahkan loading state
+    }
+    const { image, title, category, price } = products;
 
     return (
         <div className="container w-full h-fit">
@@ -77,13 +80,11 @@ const ProductDetail = () => {
 
                     {/* Order Button */}
                     <div className="w-full text-left">
-                        <Button
-                            style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer"
-                            title="Confirm Order"
-                        >
+                        <button onClick={() => addToCart(products)} className="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer ">
                             <span>Add To Cart</span>
                             <FaArrowAltCircleRight />
-                        </Button>
+                        </button>
+
                     </div>
 
                 </div>

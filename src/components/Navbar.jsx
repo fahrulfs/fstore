@@ -2,7 +2,7 @@ import { FaBars, FaSearch, FaShoppingBag, FaTimes, FaUser } from "react-icons/fa
 import { Link } from 'react-router-dom';
 import logo from '/logo.svg'
 import { useState, useEffect } from 'react';
-import Cart from "./Cart";
+// import Cart from "./Cart";
 
 // nav link
 const navItems = () => [
@@ -36,7 +36,7 @@ const navItems = () => [
     },
 ]
 
-function Navbar() {
+function Navbar({ toggleCartVisibility }) {
 
     // searchbar 
     const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
@@ -69,12 +69,6 @@ function Navbar() {
 
     });
 
-    // cart display
-    const [isCartVisible, setIsCartVisible] = useState(false);
-    function openCart() {
-        setIsCartVisible(!isCartVisible);
-    }
-
 
     return (
         <header className={`z-50 fixed items-center w-full p-2 
@@ -105,11 +99,9 @@ function Navbar() {
 
                 {/* accoun and shop*/}
                 <div className='text-lg text-bold text-blackColor flex items-center gap-4'>
-                    <a onClick={openCart} className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 cursor-pointer'>
-                        {
-                            isCartVisible ? <FaTimes className='hover:text-blackColor text-accentColor w-5 h-5 cursor-pointer' /> :
-                                <FaShoppingBag className='text-blackColor hover:text-accentColor w-5 h-5 cursor-pointer' />
-                        }</a>
+                    <button onClick={toggleCartVisibility} className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 cursor-pointer'>
+                        <FaShoppingBag className='text-blackColor hover:text-accentColor w-5 h-5 cursor-pointer' />
+                    </button>
 
                     <a href="" className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 '><FaUser /></a>
                     <button onClick={hamburgerMenu} className='lg:hidden'>
@@ -152,13 +144,6 @@ function Navbar() {
                     }
                 </ul>
             </div>
-
-
-            {/* CART */}
-            {isCartVisible && (
-                <Cart />
-            )}
-
         </header>
 
     )

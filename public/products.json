@@ -3,7 +3,7 @@
         "id":1,
        "title":"Adicolor Classics Joggers",
        "category": "Dress",
-       "price": 370,
+       "price": 30,
         "image":"/images/products/image1.png",
         "status": "Best Selers"
     },
@@ -11,7 +11,7 @@
         "id":2,
        "title":"Nike Sportswear Futura Luxe",
        "category": "Bag",
-       "price": 300,
+       "price": 20,
        "image":"/images/products/image2.png",
        "status": "Best Selers"
     },
@@ -19,7 +19,7 @@
         "id":3,
        "title":"Geometric print Scarf",
        "category": "Dress",
-       "price": 200,
+       "price": 45,
        "image":"/images/products/image3.png",
        "status": "Best Selers"
     },
@@ -27,7 +27,7 @@
         "id":4,
        "title":"Yellow Reserved Hoodie",
        "category": "Hoodies",
-       "price": 320,
+       "price": 90,
        "image":"/images/products/image4.png",
        "status": "New Arriaval"
     },
@@ -35,7 +35,7 @@
         "id":5,
        "title":"Basic Dress Green",
        "category": "Dress",
-       "price": 150,
+       "price": 80,
        "image":"/images/products/image5.png",
        "status": "New Arriaval"
     },
@@ -43,7 +43,7 @@
         "id":6,
        "title":"Nike Air Zoom Pegasus",
        "category": "Shoe",
-       "price": 700,
+       "price": 200,
        "image":"/images/products/image6.png",
        "status": "Best Selers"
     },
@@ -59,14 +59,14 @@
         "id":8,
        "title":"Nike Sportswear Futura Luxe",
        "category": "Glasses",
-       "price": 160,
+       "price": 80,
        "image":"/images/products/image8.png"
     },
      {
         "id":9,
        "title":"Adicolor Classics Joggers",
        "category": "Dress",
-       "price": 370,
+       "price": 35,
         "image":"/images/products/image9.png",
         "status": "Best Selers"
     },
@@ -74,7 +74,7 @@
         "id":10,
        "title":"Nike Sportswear Futura Luxe",
        "category": "Dress",
-       "price": 300,
+       "price": 50,
        "image":"/images/products/image10.png",
        "status": "Best Selers"
     },
@@ -82,7 +82,7 @@
         "id":11,
        "title":"Geometric print Scarf",
        "category": "Hoodies",
-       "price": 200,
+       "price": 40,
        "image":"/images/products/image11.png",
        "status": "Best Selers"
     },
@@ -90,7 +90,7 @@
         "id":12,
        "title":"Yellow Reserved Hoodie",
        "category": "Dress",
-       "price": 320,
+       "price": 30,
        "image":"/images/products/image12.png",
        "status": "New Arriaval"
     }
