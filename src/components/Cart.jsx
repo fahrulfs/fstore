@@ -19,16 +19,16 @@ function Cart({ cartItems, hideCart }) {
                             </div>
                             <p className='section-parag-light'>
 
-                                {item.title} x({item.z})
+                                {item.title} x({item.quantity})
                             </p>
                             <p className='section-parag-light'>
-                                ${item.price}
+                                ${item.totalPrice.toFixed(2)}
                             </p>
                         </div>
                         <hr className='my-2' />
                     </li>
                 ))}
-                <p className='section-parag-light'>Total ${ }</p>
+                <p className='section-parag-light'>Total ${cartItems.reduce((acc, item) => acc + item.totalPrice, 0).toFixed(2)}</p>
                 <Button style="flex justify-center items-center gap-2 w-full py-3 px-4 bg-accentColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-blackColor hover:text-whiteColor cursor-pointer mt-5 ">
                     <span>Checkout</span>
                     <FaArrowAltCircleRight />

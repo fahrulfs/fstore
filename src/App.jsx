@@ -7,10 +7,31 @@ export default function App() {
   const [cartItems, setCartItems] = useState([]);
   const [isCartVisible, setIsCartVisible] = useState(false);
 
+
+
+
+  // CART CALCULATION 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-    setCartCount(cartCount + 1);
+    const existingProductIndex = cartItems.findIndex(item => item.id === product.id);
+    if (existingProductIndex >= 0) {
+      const updatedCartItems = cartItems.map((item, index) => {
+        if (index === existingProductIndex) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+            totalPrice: (item.quantity + 1) * item.price
+          };
+        }
+        return item;
+      });
+      setCartItems(updatedCartItems);
+    } else {
+      setCartItems([...cartItems, { ...product, quantity: 1, totalPrice: product.price }]);
+    }
+    setCartCount(cartCount + 1); // Perbarui cartCount
   };
+
+
 
   // cart show - hide
   const toggleCartVisibility = () => {
