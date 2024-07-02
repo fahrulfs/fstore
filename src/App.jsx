@@ -9,20 +9,26 @@ export default function App() {
 
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
+    setCartCount(cartCount + 1);
   };
 
   // cart show - hide
   const toggleCartVisibility = () => {
-    setIsCartVisible(!isCartVisible); a
+    setIsCartVisible(!isCartVisible);
   };
+  const [cartCount, setCartCount] = useState(0);
 
+  // close cart component by clicking x icon
+  const hideCart = () => {
+    setIsCartVisible(false);
+  }
 
   return (
     <>
-      <Navbar toggleCartVisibility={toggleCartVisibility} />
+      <Navbar toggleCartVisibility={toggleCartVisibility} cartCount={cartCount} setCartCount={setCartCount} />
       <Outlet />
       <ProductDetail addToCart={addToCart} />
-      {isCartVisible && <Cart cartItems={cartItems} />}
+      {isCartVisible && <Cart cartItems={cartItems} hideCart={hideCart} />}
     </>
   )
 }

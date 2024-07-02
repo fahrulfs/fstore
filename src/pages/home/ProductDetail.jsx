@@ -19,7 +19,8 @@ const ProductDetail = ({ addToCart }) => {
 
     const { id } = useParams()
     const [products, setProducts] = useState([])
-    // const { image, title, category, price } = products;
+    const [cartCount, setCartCount] = useState(0)
+    const [notification, setNotification] = useState("")
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("/products.json");
@@ -29,11 +30,15 @@ const ProductDetail = ({ addToCart }) => {
         }
         fetchData()
     }, [id])
-
-    if (!products) {
-        return <div>Loading...</div>; // Tambahkan loading state
+    const handleAddToCart = (product) => {
+        addToCart(product)
+        setCartCount(cartCount + 1)
+        setNotification("Item added to cart")
+        setTimeout(() => {
+            setNotification("")
+        }, 2000)
     }
-    const { image, title, category, price } = products;
+    const { image, title, category, price } = products || {};
 
     return (
         <div className="container w-full h-fit">
@@ -80,7 +85,7 @@ const ProductDetail = ({ addToCart }) => {
 
                     {/* Order Button */}
                     <div className="w-full text-left">
-                        <button onClick={() => addToCart(products)} className="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer ">
+                        <button onClick={() => handleAddToCart(products)} className="flex justify-center items-center gap-2 w-full py-3 px-4 bg-blackColor outline-none text-white text-md font-bold rounded-md ease-in-out duration-150 shadow-slate-600 hover:bg-accentColor hover:text-whiteColor cursor-pointer ">
                             <span>Add To Cart</span>
                             <FaArrowAltCircleRight />
                         </button>
@@ -118,6 +123,7 @@ const ProductDetail = ({ addToCart }) => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

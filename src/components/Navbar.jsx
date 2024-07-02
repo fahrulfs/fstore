@@ -36,7 +36,17 @@ const navItems = () => [
     },
 ]
 
-function Navbar({ toggleCartVisibility }) {
+function Navbar({ toggleCartVisibility, cartCount, setCartCount }) {
+
+    function addToCart(product) {
+        // Logika untuk menambah produk ke dalam keranjang
+        // ...
+
+        // Perbarui cartCount
+        setCartCount(prevCount => prevCount + 1);
+        setNotifications(prevNotifications => prevNotifications + 1);
+
+    }
 
     // searchbar 
     const [isSearchBarVisible, setIsSearchBarVisible] = useState(false);
@@ -100,6 +110,11 @@ function Navbar({ toggleCartVisibility }) {
                 {/* accoun and shop*/}
                 <div className='text-lg text-bold text-blackColor flex items-center gap-4'>
                     <button onClick={toggleCartVisibility} className='flex items-center gap-2 capitalize text-center hover:text-accentColor hover:scale-105 cursor-pointer'>
+                        {cartCount > 0 && (
+                            <span className=' bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center'>
+                                {cartCount}
+                            </span>
+                        )}
                         <FaShoppingBag className='text-blackColor hover:text-accentColor w-5 h-5 cursor-pointer' />
                     </button>
 

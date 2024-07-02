@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
-import { FaArrowAltCircleRight } from 'react-icons/fa'
+import { FaArrowAltCircleRight, FaTimes } from 'react-icons/fa'
 import Button from './Button'
 
-function Cart({ cartItems }) {
+function Cart({ cartItems, hideCart }) {
 
     return (
-        <div className='container left-[50%] -translate-x-1/2 absolute top-[60px] px-6 lg:-right-[500px] md:-right-[300px] lg:w-88 md:w-80 bg-white p-4 shadow-md rounded-md h-fit z-50'>
-            <h3 className='h3'>Your Cart</h3>
+        <div className='container left-[50%] -translate-x-1/2 absolute top-[60px] px-6 lg:-right-[500px] md:-right-[300px] lg:w-88 md:w-80 bg-white border border-blackColor p-4 shadow-md rounded-md h-fit z-50'>
+            <div className='flex justify-between'>
+                <h3 className='h3'>Your Cart</h3>
+                <FaTimes className='cursor-pointer' onClick={hideCart} />
+            </div>
             <ul className='mt-3'>
                 {cartItems.map((item, index) => (
                     <li key={index}>
