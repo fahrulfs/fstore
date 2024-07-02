@@ -4,10 +4,11 @@ import ProductDetail from "./pages/home/ProductDetail";
 import Cart from "./components/Cart";
 import { useState } from "react";
 export default function App() {
+
+
   const [cartItems, setCartItems] = useState([]);
   const [isCartVisible, setIsCartVisible] = useState(false);
-
-
+  const [cartCount, setCartCount] = useState(0);
 
 
   // CART CALCULATION 
@@ -28,7 +29,7 @@ export default function App() {
     } else {
       setCartItems([...cartItems, { ...product, quantity: 1, totalPrice: product.price }]);
     }
-    setCartCount(cartCount + 1); // Perbarui cartCount
+    setCartCount(cartCount + 1);
   };
 
 
@@ -37,7 +38,6 @@ export default function App() {
   const toggleCartVisibility = () => {
     setIsCartVisible(!isCartVisible);
   };
-  const [cartCount, setCartCount] = useState(0);
 
   // close cart component by clicking x icon
   const hideCart = () => {

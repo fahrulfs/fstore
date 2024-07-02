@@ -41,7 +41,7 @@ const ProductDetail = ({ addToCart }) => {
     const { image, title, category, price } = products || {};
 
     return (
-        <div className="container w-full h-fit">
+        <div className="container w-full h-fit py-2">
 
             <div className="pt-20 lg:pt-32 grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-12 gap-6">
 
